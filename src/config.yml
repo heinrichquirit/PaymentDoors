@@ -1,0 +1,9 @@
+doors:
+  # Set this to false to disable doors to automatically close.
+  auto-close: true
+  # The amount of seconds it takes to close the door. Default set to 5 seconds.
+  interval: 5
+
+vault:
+  # Set this to true to enable doors to deduct money from players.
+  enable: false

@@ -1,0 +1,8 @@
+name: PaymentDoors
+main: main.java.net.bigbadcraft.paymentdoors.DoorsPlugin
+version: 3.0
+commands:
+  doors:
+    description: The main command.
+    permission: paymentdoors.use
+    permission-message: You do not have <permission>

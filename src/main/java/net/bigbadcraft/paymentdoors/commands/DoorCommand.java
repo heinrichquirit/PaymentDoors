@@ -48,14 +48,18 @@ public class DoorCommand implements CommandExecutor {
 				} catch (NumberFormatException e) {
 					manager.message(player, ChatColor.RED, "Invalid argument, please enter a number.");
 				}
-			} else if (strings[0].equalsIgnoreCase("cost")) {
-				try {
-					int money = Integer.parseInt(strings[1]);
-					manager.saveMoney(player, money);
-					manager.message(player, ChatColor.GREEN, "Your door will cost $" + money + " to use, please place your door now.");
-				} catch (NumberFormatException e) {
-					manager.message(player, ChatColor.RED, "Invalid argument, please enter a number.");
+			} else if (plugin.getConfig().getBoolean("vault.enable")) {
+				if (strings[0].equalsIgnoreCase("cost")) {
+					try {
+						int money = Integer.parseInt(strings[1]);
+						manager.saveMoney(player, money);
+						manager.message(player, ChatColor.GREEN, "Your door will cost $" + money + " to use, please place your door now.");
+					} catch (NumberFormatException e) {
+						manager.message(player, ChatColor.RED, "Invalid argument, please enter a number.");
+					}
 				}
+			} else {
+				manager.message(player, ChatColor.RED, "This command is disabled, since Vault is not found. Contact your Administrator for assistance.");
 			}
 		}
 		return true;

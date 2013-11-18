@@ -55,7 +55,7 @@ public class DoorManager {
 	// Message handling
 	
 	public String helpMenu() {
-		return "----- [" + GOLD + "PaymentDoors" + WHITE +"] -----\n" +
+		return "------ [" + GOLD + "PaymentDoors" + WHITE +"] ------\n" +
 			GOLD + "-/doors xp <amount>" + WHITE + " - The amount of xp your door should charge.\n" +
 			GOLD + "-/doors cost <amount>" + WHITE + " - The cost amount your door should charge.\n" +
 			"--------------------------";
@@ -71,14 +71,30 @@ public class DoorManager {
 		@SuppressWarnings("deprecation")
 		int face = block.getData();
 		switch(face) {
-		case 3: 
+		//case3
+		case 1: 
 			Block n = block.getRelative(BlockFace.NORTH); 
 			n.setType(Material.SIGN);
-			Sign sign = (Sign) n.getState();
-			sign.setLine(0, "[PaymentDoors]");
-		case 4: block.getRelative(BlockFace.EAST).setType(Material.SIGN);
-		case 5: block.getRelative(BlockFace.WEST).setType(Material.SIGN);
-		case 2: block.getRelative(BlockFace.SOUTH).setType(Material.SIGN);
+			Sign a = (Sign) n.getState();
+			a.setLine(0, "[PaymentDoors]");
+		//case4
+		case 2: 
+			Block e = block.getRelative(BlockFace.EAST);
+			e.setType(Material.SIGN);
+			Sign b = (Sign) e.getState();
+			b.setLine(0, "[PaymentDoors]");
+		//case5
+		case 0:
+			Block w = block.getRelative(BlockFace.WEST);
+			w.setType(Material.SIGN);
+			Sign c = (Sign) w.getState();
+			c.setLine(0, "[PaymentDoors]");
+		//case2
+		case 3: 
+			Block s = block.getRelative(BlockFace.SOUTH);
+			s.setType(Material.SIGN);
+			Sign d = (Sign) s.getState();
+			d.setLine(0, "[PaymentDoors]");
 		}
 	}
 	

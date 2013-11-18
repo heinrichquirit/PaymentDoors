@@ -1,6 +1,7 @@
 name: PaymentDoors
 main: main.java.net.bigbadcraft.paymentdoors.DoorsPlugin
 version: 3.0
+softdepend: [Vault]
 commands:
   doors:
     description: The main command.
